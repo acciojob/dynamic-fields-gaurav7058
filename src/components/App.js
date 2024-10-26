@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './../styles/App.css';
+import "./../styles/App.css";
 
 const App = () => {
   // State to hold fields
@@ -28,10 +28,9 @@ const App = () => {
   // Handler for form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Log each name and age
-    fields.forEach((field) => {
-      console.log(`Name: ${field.name}, Age: ${field.age}`);
-    });
+    // Prepare the data in the expected format
+    const dataToLog = [fields]; // Wrap the fields array in another array
+    console.log(dataToLog);
   };
 
   return (
@@ -66,7 +65,12 @@ const App = () => {
             </button>
           </div>
         ))}
-        <button type="button" onClick={handleAddFields} style={{ marginTop: "20px" }}>
+        <button
+          type="button"
+          onClick={handleAddFields}
+          style={{ marginTop: "20px" }}
+          data-testid="add-more-button"
+        >
           Add More
         </button>
         <button type="submit" style={{ marginTop: "20px", marginLeft: "10px" }}>
