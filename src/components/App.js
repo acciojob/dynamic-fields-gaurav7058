@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import './../styles/App.css';
 
 const App = () => {
+  // State to hold fields
   const [fields, setFields] = useState([{ name: "", age: "" }]);
 
   // Handler to add new fields
@@ -19,11 +20,12 @@ const App = () => {
     );
   };
 
-  // Handler to remove a field
+  // Handler to remove a specific field
   const handleRemoveFields = (index) => {
     setFields((prevFields) => prevFields.filter((_, i) => i !== index));
   };
 
+  // Handler for form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     // Log each name and age
@@ -44,14 +46,16 @@ const App = () => {
               value={field.name}
               onChange={(e) => handleInputChange(index, e)}
               style={{ marginRight: "10px" }}
+              required
             />
             <input
-              type="text"
+              type="number"
               name="age"
               placeholder="Age"
               value={field.age}
               onChange={(e) => handleInputChange(index, e)}
               style={{ marginRight: "10px" }}
+              required
             />
             <button
               type="button"
