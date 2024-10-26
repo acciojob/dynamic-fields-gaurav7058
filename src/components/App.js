@@ -28,13 +28,7 @@ const App = () => {
     e.preventDefault();
     // Log each name and age
     fields.forEach((field) => {
-      if(field.name=="" || field.age==""){
-        alert("Please fill all fields");
-        return
-      }
-      else{
-        console.log(`Name: ${field.name}, Age: ${field.age}`);
-      }
+      console.log(`Name: ${field.name}, Age: ${field.age}`);
     });
   };
 
